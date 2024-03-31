@@ -1,32 +1,57 @@
-package com.mycompany.latihan.java;
 
 import java.util.Scanner;
+
 /**
  *
  * @author DAIRA SYAHFITRI
  */
 public class LatScanner {
-public static void main(String args[])
-{
-// membuat objek baru
-Scanner input = new Scanner (System.in);
-    
-// deklarasi variabel
+    private String nim;
+    private String nama;
+    private double nilaiAbsen;
+    private double nilaiTugas;
+    private double nilaiUTS;
+    private double nilaiUAS;
 
-String nama;
-int n2;
-double n1, n3;
+    public void inputData() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("PROGRAM NILAI MAHASISWA");
+        System.out.println("-------------------------------------------");
+        System.out.print("NIM : ");
+        nim = scanner.nextLine();
+        System.out.print("Nama Mahasiswa : ");
+        nama = scanner.nextLine();
+        System.out.print("Nilai Absen : ");
+        nilaiAbsen = scanner.nextDouble();
+        System.out.print("Nilai Tugas : ");
+        nilaiTugas = scanner.nextDouble();
+        System.out.print("Nilai UTS : ");
+        nilaiUTS = scanner.nextDouble();
+        System.out.print("Nilai UAS : ");
+        nilaiUAS = scanner.nextDouble();
+    }
 
-System.out.print("Masukan Nama Anda : ");
-nama = input.nextLine();
-System.out.print("Masukan Nilai 1 ; ");
-n1 = input.nextDouble();
-System.out.print("Masukan Nilai 2 : ");
-n2 = input.nextInt();
+    public double hitungRataRata() {
+        return (0.1 * nilaiAbsen) + (0.2 * nilaiTugas) + (0.3 * nilaiUTS) + (0.4 * nilaiUAS);
+    }
 
-n3 = n1 + n2;
-System.out.println("\nNama Anda : "+nama);
+    public String tentukanGrade(double rataRata) {
+        if (rataRata >= 90) {
+            return "A";
+        } else if (rataRata >= 80) {
+            return "B";
+        } else if (rataRata >= 70) {
+            return "C";
+        } else {
+            return "D";
+        }
+    }
 
-System.out.println("Nilai Anda : "+ n3);
+    public void tampilkanOutput(double rataRata, String grade) {
+        System.out.println("-------------------------------------------");
+        System.out.println("Rata-Rata : " + rataRata);
+        System.out.println("Grade : " + grade);
+        System.out.println("-------------------------------------------");
+    }
 }
-}
+
