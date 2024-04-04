@@ -20,4 +20,5 @@ void tambahKecepatan(int pertambahanKecepatan) (
 kecepatan = kecepatan+ pertambahanKecepatan;
 System.out.println("Kecepatan; "+ kecepatan);
 )
+**/ pertemuan 1
 }
